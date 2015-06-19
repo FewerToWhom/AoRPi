@@ -1,7 +1,7 @@
 include settings.mk
 
 all:
-	cd framebuffer && $(MAKE)
+	cd gpio && $(MAKE)
 	cd memory && $(MAKE)
 
 lib:

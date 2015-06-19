@@ -7,10 +7,6 @@
 #define MAILBOX_BASE 0x2000B880
 #define GPU_FLUSH_OFFSET 0x40000000
 
-#ifdef NO_PRINT
-void print(char* x, ...) { }
-#endif
-
 struct MailBox_t {
     int Read;
     int reserved[3];

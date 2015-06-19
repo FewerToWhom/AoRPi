@@ -1,9 +1,12 @@
 # Adventures on Rasperry Pi
 Random Raspberry Pi bare metal code I've been working on my spare time.
 
-Parts of my codes were inspired mostly by the Baking Pi tutorial
+My codes were inspired mostly by the Baking Pi tutorial
 (https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/).
-Other, more specific, references are shown in each section.
+Other general references include the ARM instruction set
+(http://www.ic.unicamp.br/~ranido/mc404/arm/arm-instructionset.pdf)
+and the BCM2835 peripherals guide (https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/downloads/SoC-Peripherals.pdf).
+More specific references are shown in each section.
 
 memory/
 

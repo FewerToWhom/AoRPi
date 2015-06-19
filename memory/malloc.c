@@ -2,22 +2,22 @@
 
 inline void* End(Header *H)
 {
-    return H->data + H->size;
+    return (char*)(H->data) + H->size;
 }
 
 void* AlignmentFill(void* p)
 {
-    long isAligned = (long)p & 8;
+    long isAligned = (long)p & 0x7;
 
-    if (isAligned != 0 && isAligned != 8)
-        return p + 8 - isAligned;
+    if (isAligned != 0)// && isAligned != 8)
+        return (char*)p + 8 - isAligned;
     else
         return p;
 }
 
 void free(void* pointer)
 {
-    Header* H = (Header*)(pointer - sizeof(Header));
+    Header* H = (Header*)((char*)pointer - sizeof(Header));
     H->prev->next = H->next;
     H->next->prev = H->prev;
 }
@@ -51,7 +51,7 @@ void* malloc(unsigned int size)
     {
         V->prev = H->prev;
         V->next = H->next;
-        V->data = sizeof(Header) + AlignmentFill(End(H));
+        V->data = sizeof(Header) + (char*)AlignmentFill(End(H));
 
         if (V->next == 0)
         {
